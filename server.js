@@ -6,7 +6,7 @@ const path = require("path");
 
 //create express server
 const app = express();
-//set the port of the server allowing heroku to set
+//set the port of the server allowing heroku
 const PORT = process.env.PORT || 8080;
 // Static directory - telling express where my statis files are
 app.use(express.static("public"));
