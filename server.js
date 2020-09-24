@@ -10,10 +10,17 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 // Static directory - telling express where my statis files are
 app.use(express.static("public"));
+
+//Mongodb error handling
+// db.on("error", error => {
+//   console.log("Database Error:", error);
+// });
+
 //api routes tells server to send index.html to browser
 app.get("/", function (req, res) {
   res.send(path.resolve(__dirname, "public/index.html"));
 });
+
 //set out port to listen
 app.listen(PORT, function () {
   console.log("server is listening on PORT: " + PORT);
