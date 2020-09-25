@@ -1,42 +1,44 @@
 const mongoose = require("mongoose");
+//pull off the schema. We could also make a new one ?
 const Schema = mongoose.Schema;
-
+//this is the schema constructor
 const WorkoutSchema = new Schema({
-    name: {
-    type: String,
-    trim: true,
-    required: "name is Required"
+  day: {
+    type: Date,
+    default: Date.now,
   },
-
-  type: {
-    type: String,
-    trim: true,
-    unique: true,
-    required: true
-  },
-  weight: {
-    type: Number,
-    unique: true,
-    required: true
-  },
-  sets: {
-    type: Number,
-    unique: true,
-    required: true
-  },
-  reps: {
-    type: Number,
-    unique: true,
-    required: true
-  },
-  duration: {
-    type: String,
-    trim: true,
-    unique: true,
-    required: true
-  },
+  exercises: [
+    {
+      type: {
+        type: String,
+        trim: true,
+        required: "Type of exercise is required.",
+      },
+      name: {
+        type: String,
+        trim: true,
+        required: "Name of exercise is required.",
+      },
+      duration: {
+        type: Number,
+        required: "Duration of exercise is required.",
+      },
+      weight: {
+        type: Number,
+      },
+      sets: {
+        type: Number,
+      },
+      reps: {
+        type: Number,
+      },
+      distance: {
+        type: String,
+      },
+    },
+  ],
 });
 
-const Example = mongoose.model("Workout", WorkoutSchema);
-
+const Workout = mongoose.model("Workout", workoutSchema);
+//export the model for usage elsewhere
 module.exports = Example;
