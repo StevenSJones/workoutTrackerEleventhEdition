@@ -33,12 +33,12 @@ const WorkoutSchema = new Schema({
         type: Number,
       },
       distance: {
-        type: String,
+        type: Number,
       },
     },
   ],
 });
-
-const Workout = mongoose.model("Workout", workoutSchema);
-//export the model for usage elsewhere
-module.exports = Example;
+//register this model on mongoose passing in title and schema as args
+const Workout = mongoose.model("Workout", WorkoutSchema);
+// ** export the model for usage elsewhere (in index.js)
+module.exports = Workout;
