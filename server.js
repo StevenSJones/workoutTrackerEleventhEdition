@@ -4,8 +4,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
-//import models
-const models = require("./models");
 
 //create express server
 const app = express();
@@ -27,43 +25,8 @@ mongoose.connect("mongodb://localhost/workout", {
 // db.on("error", error => {
 //   console.log("Database Error:", error);
 // });
-
-//content routes tells server to send index.html to browser
-app.get("/", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "public/index.html"));
-});
-//content route is defined
-app.get("/exercise", function (req, res) {
-  console.log("Inside the /api/workouts PUT route!!!!!!!!!!!!");
-  res.sendFile(path.resolve(__dirname, "public/exercise.html"));
-});
-//The stats content route is defined
-app.get("/stats", function (req, res) {
-  console.log("Inside the /api/workouts PUT route!!!!!!!!!!!!");
-  res.sendFile(path.resolve(__dirname, "public/exercise.html"));
-});
-
-//api routes==============================================================
-//The /api/workouts route is defined
-app.get("/api/workouts", function (req, res) {
-  models.Workout.find().select("-__v").then(workouts => res.json(workouts))
-  .catch(err => res.status(400).json(err));
-  // res.send("Inside the /api/workouts get route!!!!!!!!!!!!");
-});
-// allows you to create a page using post
-app.post("/api/workouts", function (req, res) {
-  // res.send("Inside the /api/workouts post route!!!!!!!!!!!!")
-  models.Workout.create(req.body).then(workouts => res.json(workouts))
-  .catch(err => res.status(400).json(err));
-  // console.log("Inside the /api/workouts POST route!!!!!!!!!!!!");
-});
-// update (addExercise) dealing with information that we are passing along route. :id is called a route parameter. I am making a key of id and the value will be assigned.
-app.put('/api/workouts/:id', function (req, res) {
-  // console.log("Inside the /api/workouts PUT route!!!!!!!!!!!!");
-  models.Workout.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}).then(workouts => res.json(workouts))
-  .catch(err => res.status(400).json(err));
-  res.send(req.params)
-});
+require("./routes/api-routes")(app);//I am passing app (the app function)
+require("./routes/html-routes")(app);//I am passing app (the app function)
 //set out port to listen
 app.listen(PORT, function () {
   console.log("server is listening on PORT: " + PORT);
