@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 //import models
-const model = require("./models");
+const models = require("./models");
 
 //create express server
 const app = express();
@@ -46,7 +46,8 @@ app.get("/stats", function (req, res) {
 //api routes==============================================================
 //The /api/workouts route is defined
 app.get("/api/workouts", function (req, res) {
-  res.send("Inside the /api/workouts get route!!!!!!!!!!!!");
+  models.Workout.find().select("-_v").then(workouts => res.json(workouts));
+  // res.send("Inside the /api/workouts get route!!!!!!!!!!!!");
 });
 // allows you to create a page using post
 app.post("/api/workouts", function (req, res) {
