@@ -12,6 +12,6 @@ module.exports = app => {
   //The stats content route is defined
   app.get("/stats", function (req, res) {
     console.log("Inside the /api/workouts PUT route!!!!!!!!!!!!");
-    res.sendFile(path.resolve(__dirname, "../public/exercise.html"));
+    res.sendFile(path.resolve(__dirname, "../public/stats.html"));
   });
 };
