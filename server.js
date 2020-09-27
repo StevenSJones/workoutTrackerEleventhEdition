@@ -4,7 +4,6 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
-
 //create express server
 const app = express();
 //set the port of the server allowing heroku
@@ -21,12 +20,9 @@ mongoose.connect("mongodb://localhost/workout", {
   useFindAndModify: false,
   useUnifiedTopology: true, //message came up in terminal to add this
 });
-// Mongodb error handling
-// db.on("error", error => {
-//   console.log("Database Error:", error);
-// });
-require("./routes/api-routes")(app);//I am passing app (the app function)
-require("./routes/html-routes")(app);//I am passing app (the app function)
+
+require("./routes/api-routes")(app); //I am passing app (the app function)
+require("./routes/html-routes")(app); //I am passing app (the app function)
 //set out port to listen
 app.listen(PORT, function () {
   console.log("server is listening on PORT: " + PORT);

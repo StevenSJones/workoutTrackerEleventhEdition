@@ -1,6 +1,6 @@
 const path = require("path");
 //content routes tells server to send index.html to browser
-module.exports = app => {
+module.exports = (app) => {
   app.get("/", function (req, res) {
     res.sendFile(path.resolve(__dirname, "../public/index.html"));
   });
