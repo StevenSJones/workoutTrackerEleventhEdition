@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(morgan("dev")); //logs out what we are going through
 
 // connection string using mongoose:
-var uri = "mongodb://localhost/workout";
-// var uri =
-// "mongodb+srv://Steven:Password1@cluster0.s4hbt.mongodb.net/workout?retryWrites=true&w=majority";
-//   'MY_SERVER-shard-00-00-clv3h.mongodb.net:27017,' +
+// var uri = "mongodb://localhost/workout";
+var uri =
+"mongodb+srv://Steven:Password1@cluster0.s4hbt.mongodb.net/workout?retryWrites=true&w=majority";
+  'MY_SERVER-shard-00-00-clv3h.mongodb.net:27017,'
 //   'MY_SERVER-shard-00-01-clv3h.mongodb.net:27017,' +
 //   'MY_SERVER-shard-00-02-clv3h.mongodb.net:27017/MY_DATABASE' +
 //   'ssl=true&replicaSet=MY_REPLICASET_NAME-shard-0&authSource=MY_ADMIN_DATABASE';
