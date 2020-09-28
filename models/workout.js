@@ -35,10 +35,10 @@ const WorkoutSchema = new Schema(
         },
         distance: {
           type: Number,
-        },
-      },
-    ],
-  },
+        }
+      }
+    ]
+  }
   // { toJSON: { virtuals: true } }
 );
 

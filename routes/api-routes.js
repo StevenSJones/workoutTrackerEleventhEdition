@@ -28,7 +28,7 @@ module.exports = (app) => {
   // update (addExercise) dealing with information that we are passing along route. :id is called a route parameter. I am making a key of id and the value will be assigned.
   app.put("/api/workouts/:id", function (req, res) {
     // console.log("Inside the /api/workouts PUT route!!!!!!!!!!!!");
-    models.Workout.findOneAndUpdate({ _id: req.params.id }, req.body, {
+    models.Workout.findOneAndUpdate({ _id: req.params.id }, {$push: {exercises:req.body}}, {
       new: true,
     })
       .then((workouts) => res.json(workouts))
