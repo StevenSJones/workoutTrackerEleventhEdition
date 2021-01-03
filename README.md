@@ -1,57 +1,31 @@
-# Unit 17 Nosql Homework: Workout Tracker
+![GitHub repo size](https://img.shields.io/github/repo-size/stevensjones/workoutTrackerEleventhEdition)
+# Project Title: 
+> Workout Tracker
+## Description: 
+> This app is designed to track a user's workout using javascript, a Mongo database with a Mongoose schema and route handling with Express."
+>  https://hidden-sea-72938.herokuapp.com/
+> ![Screen Shot 2021-01-03 at 12 56 05 PM](https://user-images.githubusercontent.com/56704209/103487623-02c00700-4dc4-11eb-91fd-ea3dedb2c951.png)
+## Table Of Contents:
+- [Title](#Title)
+- [Description](#Description)
+- [Table Of Contents](#TableOfContents)
+- [Prerequisites](#Prerequisites)
+- [Tests](#Tests)
+- [Contributing](#Contributing)
+- [Usage](#Usage) 
+- [License](#License)
+- [Further Contact](#FurtherContact)
+## Prerequisites:
+>  mongoose : npm i mongoose, express : npm i express, mongoDB Atlas : * [Set Up MongoDB Atlas](../04-Supplemental/MongoAtlas-Setup.md)
+> start script: node server.js
+## Tests:
+> None
+## Contributing:
+> Steven Jones
+## Usage:
+> For anyone looking to manage their workouts, namely the name, type, weight, sets, reps, and duration of a new exercise or adding to an old one. A user can also track the distance traveled in a cardio exercise and the view the combined weight of multiple exercises on the `stats` page.
+## License
+> © 2020 Steven Jones. All Rights Reserved 
+## Further Contact:
+> Feel free to reach out to me with questions involving this project on GITHUB at : [stevensjones](https://github.com/stevensjones);
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
-
-## User Story
-
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
-
-## Business Context
-
-A consumer will reach their fitness goals more quickly when they track their workout progress.
-
-## Acceptance Criteria
-
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
-
-The user should be able to:
-
-  * Add exercises to a previous workout plan.
-
-  * Add new exercises to a new workout plan.
-
-  * View the combined weight of multiple exercises on the `stats` page.
-
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
-
-  * [Set Up MongoDB Atlas](../04-Supplemental/MongoAtlas-Setup.md)
-
-  * [Deploy with Heroku and MongoDB Atlas](../04-Supplemental/MongoAtlas-Deploy.md)
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We want you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
